@@ -5,6 +5,7 @@ import { share } from 'rxjs';
 import { AuthService } from '../../shared/services/auth.service';
 import {User }from '../../shared/models/User'
 import { UserService } from 'src/app/shared/services/user.service';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-signup',
@@ -30,6 +31,14 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     console.log(this.signUpForm.value);
+    if(this.signUpForm.value.password != this.signUpForm.value.rePassword ){
+      alert("Nem egyezik a kettő jelszó");
+      stop();
+    }
+    if(!this.signUpForm.value.email.includes('@')){
+      alert("Email cím nem jó");
+      stop();
+    }
     this.authService.signup(this.signUpForm.get('email')?.value, this.signUpForm.get('password')?.value).then(cred => {
       console.log(cred);
       const user : User ={
