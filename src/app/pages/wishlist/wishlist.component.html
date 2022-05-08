@@ -6,7 +6,7 @@
 <div class="div-card" >
     <mat-card fxLayout fxLayoutGap="20px">
         <span fxFlex="50%" class="centered">
-                        <form [formGroup]="commentsForm" (ngSubmit)="addComment()" >
+                        <form [formGroup]="commentsForm"  (ngSubmit)="addComment()">
                     <div>
                         <mat-form-field>
                             <mat-label for="username">Username: </mat-label>
@@ -18,14 +18,15 @@
                         </mat-form-field>
                     </div>
                     
-                </form>
+              
                 <mat-card-actions>
                     <div>
-                        <button mat-raised-button color="primary" class="centered" type="submit">ADD</button>
+                        <button mat-raised-button color="primary" [color]="'white'" class="centered" [routerLink]="'/wishlist'" type="submit">Küld</button>
                     </div>
             </mat-card-actions>
+        </form>
         </span>
-    <div class="padder"></div>
+    <div ></div>
     </mat-card>
     </div>
     <mat-card  class="mat" *ngFor="let comment of loaded | async">

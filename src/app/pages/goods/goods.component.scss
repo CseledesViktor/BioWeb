@@ -7,10 +7,16 @@ mat-card-title{
     font-size: xx-large;
     font-weight: 900;
 }
+
 img{
     display: inline-block;
     width: 30%;
     float: left;
+    max-height: min-content;
+
+}
+mat-card-image{
+    max-height: min-content;
 }
 button.mat-raised-button{
     color: white;
