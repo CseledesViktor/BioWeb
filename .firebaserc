@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bio-webshop": {
+      "hosting": {
+        "Bio-WebShop": [
+          "bio-webshop"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bio-webshop"
+  }
+}

@@ -1,0 +1,41 @@
+
+mat-card{
+    margin: 2.5vh 5vh;
+    max-height: 30%;
+}
+mat-card-title{
+    font-size: xx-large;
+    font-weight: 900;
+}
+img{
+    display: inline-block;
+    width: 30%;
+    float: left;
+}
+button.mat-raised-button{
+    color: white;
+    max-width: 20%;
+    width: 300px;
+    position: absolute;
+    bottom: 10px;
+
+  }
+.cartButton {
+    margin-left: -20% !important ;
+}
+.price{
+    font-size: x-large;
+    border: 2px primary;
+}
+.middle{
+    margin-top: 5%;
+}
+#quantity{
+    width: 45px;
+    height: 42px;
+    line-height: 1.65;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    border: 1px solid #eee;
+}

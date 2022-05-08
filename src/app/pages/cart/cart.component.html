@@ -1,0 +1,18 @@
+
+<h1>A Kosardat tartalma</h1>
+<div class="main_component div-flex">
+    <mat-card class="div-flex" *ngFor="let product of content | async">
+        <mat-card-content>
+            <table  class="context">
+                <tr>
+                    <th mat-card-title >Termékek:</th>
+                </tr>
+                <tr>
+                    <td>{{product.aru_nev}}</td>
+                    <td>{{product.price}}</td>
+                </tr>
+            </table>
+            <button mat-raised-button color="accent" type="submit" (click)="orderSend(product.id)" >Megrendel</button>
+        </mat-card-content>
+    </mat-card>
+</div>

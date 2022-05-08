@@ -1,0 +1,42 @@
+
+<h1>Oszd meg velünk gondolataidat!</h1>
+<h2>Milyen termékeket látnál még szívesen?</h2>
+
+
+<div class="div-card" >
+    <mat-card fxLayout fxLayoutGap="20px">
+        <span fxFlex="50%" class="centered">
+                        <form [formGroup]="commentsForm" (ngSubmit)="addComment()" >
+                    <div>
+                        <mat-form-field>
+                            <mat-label for="username">Username: </mat-label>
+                            <input matInput type="text" formControlName="username" />
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label for="comment">Comment: </mat-label>
+                            <textarea matInput  cols="50"  rows="50"  formControlName="comment"></textarea>
+                        </mat-form-field>
+                    </div>
+                    
+                </form>
+                <mat-card-actions>
+                    <div>
+                        <button mat-raised-button color="primary" class="centered" type="submit">ADD</button>
+                    </div>
+            </mat-card-actions>
+        </span>
+    <div class="padder"></div>
+    </mat-card>
+    </div>
+    <mat-card  class="mat" *ngFor="let comment of loaded | async">
+    <div >
+        <mat-card-header>
+            <mat-card-title>{{comment.username}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{comment.comment}}</p>
+            <p>{{comment.date | date}}</p>
+        </mat-card-content>
+    </div>
+</mat-card>
+

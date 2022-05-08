@@ -1,0 +1,44 @@
+
+<mat-tab-group (selectedTabChange)="refreshGrid($event)"  mat-align-tabs="center">
+    <mat-tab label="Pékáruk">Pékáruk  </mat-tab>
+    <mat-tab label="Italok"> Italok </mat-tab>
+    <mat-tab label="Fitness"> Fitness </mat-tab>
+    <mat-tab label="Állati"> Állati </mat-tab>
+  </mat-tab-group>
+   
+  
+  <div class="content div-flex">
+    <mat-card class="mat-elevation-z4" *ngFor="let item of products | async ">
+    <mat-card-header>
+        <mat-card-title>{{item.name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-img src={{item.picURL}}>
+    <mat-card-content>
+         <table  >
+                <tr>
+                    <th mat-card-title class="price" > {{item.price}}- Ft/darab</th>
+                </tr>
+                <tr>
+                    <td>{{item.description}}</td>
+                </tr>
+            </table>
+    </mat-card-content>
+    <mat-card-actions class="middle">
+       <!-- <button mat-stroked-button color="warn" (click)="minus()"><mat-icon>remove_circle</mat-icon></button>
+        <input matInput id="quantity" min="0" maxlength="3" type="number" readonly [value]="quantity" value="0" >
+        <button mat-stroked-button color="primary" (click)="plus()"><mat-icon>add_circle</mat-icon></button>
+    -->
+    </mat-card-actions>
+    <mat-card-actions>
+        <button class="cartButton " mat-raised-button color="primary" (click)="openSnackBar(item.name + ' kosárba helyezve', 'ok')" (click)="addToCart('', item.name)">kosár</button>
+        <button class="favButton" mat-raised-button color="accent" (click)="openSnackBar(item.name + ' kevencekhez adva!', 'ok')"><mat-icon>favorite_border</mat-icon></button>
+    </mat-card-actions>
+    </mat-card>
+</div>
+
+
+<mat-paginator [length]="2"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 15, 20]"
+              aria-label="Select page">
+</mat-paginator>

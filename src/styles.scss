@@ -1,1 +1,166 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+$mat-biogreen: (
+    50 : #edf6e7,
+    100 : #d1e9c2,
+    200 : #b3da9a,
+    300 : #94cb71,
+    400 : #7dc052,
+    500 : #66b534,
+    600 : #5eae2f,
+    700 : #53a527,
+    800 : #499d21,
+    900 : #388d15,
+    A100 : #d1ffc2,
+    A200 : #abff8f,
+    A400 : #85ff5c,
+    A700 : #72ff42,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+/* For use in src/lib/core/theming/_palette.scss */
+$mat-bioblue: (
+    50 : #e5ecf6,
+    100 : #bed0e8,
+    200 : #93b1d9,
+    300 : #6791c9,
+    400 : #477abe,
+    500 : #2662b2,
+    600 : #225aab,
+    700 : #1c50a2,
+    800 : #174699,
+    900 : #0d348a,
+    A100 : #bacdff,
+    A200 : #87a7ff,
+    A400 : #5482ff,
+    A700 : #3b6fff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #ffffff,
+    )
+);
+/* For use in src/lib/core/theming/_palette.scss */
+$mat-biored: (
+    50 : #fbe3e3,
+    100 : #f6baba,
+    200 : #f08c8c,
+    300 : #ea5e5e,
+    400 : #e63c3c,
+    500 : #e11919,
+    600 : #dd1616,
+    700 : #d91212,
+    800 : #d50e0e,
+    900 : #cd0808,
+    A100 : #fff6f6,
+    A200 : #ffc3c3,
+    A400 : #ff9090,
+    A700 : #ff7777,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+
+$custom_theme_primary: mat.define-palette($mat-biogreen); 
+$custom_theme_accent: mat.define-palette($mat-bioblue); 
+$custom_theme_warn: mat.define-palette($mat-biored);
+
+
+$Bio-WebShop-primary: mat.define-palette(mat.$indigo-palette);
+$Bio-WebShop-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Bio-WebShop-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Bio-WebShop-theme: mat.define-light-theme((
+  color: (
+    primary:$custom_theme_primary,
+    accent: $custom_theme_accent,
+    warn: $custom_theme_warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($Bio-WebShop-theme);
+
 /* You can add global styles to this file, and also import other style files */
+$bezs: antiqeuwhite;
+$cimszin: #0d348a;
+$nice-green: #66b534;
+
+h1, h2{
+    color: $cimszin;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.div-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 80%;
+}

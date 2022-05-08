@@ -1,0 +1,47 @@
+/*@use '@angular/material' as mat;
+@import '~@angular/material/_theming';
+
+
+
+@include mat-core();
+
+$mat-biogreen: (
+    50 : #edf6e7,
+    100 : #d1e9c2,
+    200 : #b3da9a,
+    300 : #94cb71,
+    400 : #7dc052,
+    500 : #66b534,
+    600 : #5eae2f,
+    700 : #53a527,
+    800 : #499d21,
+    900 : #388d15,
+    A100 : #d1ffc2,
+    A200 : #abff8f,
+    A400 : #85ff5c,
+    A700 : #72ff42,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$custom_theme_primary: mat-palette($mat-biogreen); 
+$custom_theme_accent: mat-palette($mat-yellow); 
+$custom_theme_warn: mat-palette($mat-deep-orange, A200, A100, A400);
+
+
+$custom-theme:mat-light-theme($custom_theme_primary,$custom_theme_accent, $custom_theme_warn);
+@include angular-material-theme($custom-theme);*/
